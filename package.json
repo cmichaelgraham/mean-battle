@@ -1,0 +1,16 @@
+{
+  "name": "mean-battle",
+  "version": "1.0.0",
+  "description": "mean example code for angular and aurelia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "aurelia",
+    "mean"
+  ],
+  "author": "cmichaelgraham",
+  "license": "MIT"
+}
