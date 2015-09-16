@@ -113,3 +113,7 @@ we want the bower content to be in the public folder
   </body>
 </html>
 ```
+
+### view `index.html` in browser
+
+![image](https://cloud.githubusercontent.com/assets/10272832/9904471/32a24986-5c3b-11e5-8ab7-d88757d1ce74.png)
