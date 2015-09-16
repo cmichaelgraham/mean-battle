@@ -1,0 +1,26 @@
+{
+  "name": "mean-battle",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cmichaelgraham/mean-battle",
+  "authors": [
+    "Mike Graham <mgraham@technicalmedia.com>"
+  ],
+  "description": "who put the 'a' in mean?",
+  "main": "public/index.html",
+  "keywords": [
+    "angular",
+    "aurelia",
+    "mean"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
