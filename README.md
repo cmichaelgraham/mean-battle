@@ -116,4 +116,5 @@ we want the bower content to be in the public folder
 
 ### view `index.html` in browser
 
-![image](https://cloud.githubusercontent.com/assets/10272832/9904471/32a24986-5c3b-11e5-8ab7-d88757d1ce74.png)
+![image](https://cloud.githubusercontent.com/assets/10272832/9904907/bc5b5e3a-5c3e-11e5-852b-46093f58d2f9.png)
+
