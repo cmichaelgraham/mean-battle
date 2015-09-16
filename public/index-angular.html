@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,15 +23,6 @@
 			<p class="text-center">who put the <code>a</code> in <code>mean</code>?</p>
 		</div>
 
-  	<div class="container">
-			<div class="page-header">
-				<h1>Angular Hello World</h1>
-			</div>
-			<div class="list-group">
-				<input ng-model="name" placeholder="Type world...">  Hello {{name}}
-			</div>
-		</div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -40,5 +31,9 @@
 
 		<!-- Angular includes -->
 		<script src="bower_components/angular/angular.js"></script>
+		<script src="ng-app/components/home/homeController.js"></script>
+
+		<ng-include src="'ng-app/components/home/homeView.html'"></ng-include>
+
   </body>
 </html>
