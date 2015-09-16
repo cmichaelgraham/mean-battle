@@ -52,6 +52,9 @@ point browser at localhost:3000
 
 this allows you to see changes in `server.js` and other content without stopping and starting expressjs
 
+so now to start expressjs, run nodemon
+`nodemon server.js`
+
 ### Initialize bower
 `bower init` (mostly take the defaults)
 
