@@ -33,7 +33,45 @@
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="ng-app/components/home/homeController.js"></script>
 
-		<ng-include src="'ng-app/components/home/homeView.html'"></ng-include>
+	<!-- bootstrap menu bar -->
+  <div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle Navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#">
+		        <i class="fa fa-home"></i>
+		        <span>mean-ng</span>
+		    </a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav">
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#home">home</a>
+		        </li>
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#employee-list">employee list</a>
+		        </li>
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#about">about</a>
+		        </li>
+		    </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+		        <li class="loader" if.bind="router.isNavigating">
+		            <i class="fa fa-spinner fa-spin fa-2x"></i>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+
+	<!-- placeholder for the router's views -->
+	<div ng-view></div>
+
+	<ng-include src="'ng-app/components/home/homeView.html'"></ng-include>
 
   </body>
 </html>
