@@ -31,7 +31,13 @@
 
 		<!-- Angular includes -->
 		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+
+		<!-- App includes -->
+		<script src="ng-app/app.module.js"></script>
+		<script src="ng-app/app.routes.js"></script>
 		<script src="ng-app/components/home/homeController.js"></script>
+		<script src="ng-app/components/about/aboutController.js"></script>
 
 	<!-- bootstrap menu bar -->
   <div class="navbar navbar-default" role="navigation">
@@ -70,8 +76,6 @@
 
 	<!-- placeholder for the router's views -->
 	<div ng-view></div>
-
-	<ng-include src="'ng-app/components/home/homeView.html'"></ng-include>
 
   </body>
 </html>

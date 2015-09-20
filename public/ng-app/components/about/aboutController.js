@@ -1,9 +1,9 @@
 (function(module) {
 
 	module
-	.controller('HomeCtrl', 
+	.controller('AboutCtrl', 
 		function() {
-			this.message = 'hello again, world';
+			this.message = 'about mean-battle...';
 		});
 
 }(angular.module('app')));
