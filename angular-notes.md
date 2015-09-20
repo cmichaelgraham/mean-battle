@@ -79,6 +79,22 @@ Notes:
 
 ## Angular - Routing (ngRoute)
 
+### Add ng-view directive to main html
+
+### Add Bootstrap menu bar to main html
+
+### Get ngRoute
+
+`bower install angular-route --save`
+
+### Add ngRoute to HTML
+
+### Configure routing in `app` module
+
+### Highlight selected route
+
+### Create spinner when route is loading
+
 ## Angular - Routing (ui.router)
 
 ## Angular - OData Service
