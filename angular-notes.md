@@ -77,10 +77,14 @@ Notes:
 
 ![image](https://cloud.githubusercontent.com/assets/10272832/9910427/5175d1c4-5c5a-11e5-8eef-2c2fcfec34ad.png)
 
-## Angular - Routing
+## Angular - Routing (ngRoute)
+
+## Angular - Routing (ui.router)
 
 ## Angular - OData Service
 
 ## Angular - Custom Element (Directive)
 
-## Angular
+## Angular - Security
+
+## Angular - Logging & Diagnostics
