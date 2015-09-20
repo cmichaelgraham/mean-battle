@@ -174,9 +174,125 @@ bower install angular-route --save
 }(angular.module('app')));
 ```
 
-### Highlight selected route
-
 ### Create spinner when route is loading
+
+Install `Font-Awesome`
+
+```bash
+bower install font-awesome --save
+```
+
+![image](https://cloud.githubusercontent.com/assets/10272832/9980057/fa4f5f28-5f47-11e5-9d2a-dddf3acc770a.png)
+
+Add link elements in `index-angular.html`
+
+```html
+		<!-- Font-Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
+		<!-- App Styles -->
+		<link rel="stylesheet" href="styles/styles.css">
+```
+
+Add `loader` style to `styles.css`
+
+```css
+.navbar-nav li.loader {
+    margin: 12px 24px 0 6px;
+}
+```
+
+Add `navController`
+
+```javascript
+(function(module) {
+
+	module
+	.controller('NavCtrl', 
+		function(NavService) {
+			this.message = 'nav-master';
+
+			this.navSvc = NavService;
+		});
+
+}(angular.module('app')));
+```
+
+Add `navService`
+
+```javascript
+(function(module) {
+
+	module
+	.factory('NavService', 
+		function($rootScope) {
+			var navObj = {
+				isNavigating: false
+			};
+
+			$rootScope.$on('$routeChangeStart', function(evt, cur, prev) {
+				navObj.isNavigating = true;
+			});
+
+			$rootScope.$on('$routeChangeSuccess', function(evt, cur, prev) {
+				navObj.isNavigating = false;
+			});
+
+			$rootScope.$on('$routeChangeError', function(evt, cur, prev, navErr) {
+				navObj.isNavigating = false;
+			});
+
+			return navObj;
+		});
+
+}(angular.module('app')));
+```
+
+Add navService and navController script elements to `index-angular.html`
+
+```html
+		<!-- App includes -->
+		<script src="ng-app/app.module.js"></script>
+		<script src="ng-app/app.routes.js"></script>
+		<script src="ng-app/shared/nav/navService.js"></script>
+		<script src="ng-app/shared/nav/navController.js"></script>
+		<script src="ng-app/components/home/homeController.js"></script>
+		<script src="ng-app/components/about/aboutController.js"></script>
+```
+
+Add spinner to bootstrap `nav` in `index-angular.html`
+
+```html
+		    <ul class="nav navbar-nav navbar-right">
+		        <li class="loader" ng-show="nav.navSvc.isNavigating">
+		            <i class="fa fa-spinner fa-spin fa-2x"></i>
+		        </li>
+		    </ul>
+```
+
+Add two second delay when navigating to `about` in `app.routes.js`
+
+```javascript
+			.when('/about', {
+				controller: 'AboutCtrl',
+				controllerAs: 'about',
+				templateUrl: 'ng-app/components/about/aboutView.html',
+				resolve: {
+					simDelay: function($q, $timeout) {
+						var deferred = $q.defer();
+						$timeout(function() {
+							deferred.resolve("simDelay done.");
+						}, 2000);
+						return deferred.promise;
+					}
+				}
+```
+
+... And Voila :)
+
+![image](https://cloud.githubusercontent.com/assets/10272832/9980220/8e53146c-5f4d-11e5-9aed-12523092e2c8.png)
+
+### Highlight selected route
 
 ## Angular - Routing (ui.router)
 
