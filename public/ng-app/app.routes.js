@@ -15,7 +15,16 @@
 			.when('/about', {
 				controller: 'AboutCtrl',
 				controllerAs: 'about',
-				templateUrl: 'ng-app/components/about/aboutView.html'
+				templateUrl: 'ng-app/components/about/aboutView.html',
+				resolve: {
+					simDelay: function($q, $timeout) {
+						var deferred = $q.defer();
+						$timeout(function() {
+							deferred.resolve("simDelay done.");
+						}, 2000);
+						return deferred.promise;
+					}
+				}
 			}).otherwise('/')
 	}]);
 

@@ -10,6 +10,12 @@
     <!-- Bootstrap -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
+		<!-- Font-Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
+		<!-- App Styles -->
+		<link rel="stylesheet" href="styles/styles.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,11 +42,13 @@
 		<!-- App includes -->
 		<script src="ng-app/app.module.js"></script>
 		<script src="ng-app/app.routes.js"></script>
+		<script src="ng-app/shared/nav/navService.js"></script>
+		<script src="ng-app/shared/nav/navController.js"></script>
 		<script src="ng-app/components/home/homeController.js"></script>
 		<script src="ng-app/components/about/aboutController.js"></script>
 
 	<!-- bootstrap menu bar -->
-  <div class="navbar navbar-default" role="navigation">
+  <div class="navbar navbar-default" role="navigation" ng-controller="NavCtrl as nav">
 		<div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle Navigation</span>
@@ -50,7 +58,7 @@
 		    </button>
 		    <a class="navbar-brand" href="#">
 		        <i class="fa fa-home"></i>
-		        <span>mean-ng</span>
+		        <span>{{ nav.message }}</span>
 		    </a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,7 +75,7 @@
 		    </ul>
 
 		    <ul class="nav navbar-nav navbar-right">
-		        <li class="loader" if.bind="router.isNavigating">
+		        <li class="loader" ng-show="nav.navSvc.isNavigating">
 		            <i class="fa fa-spinner fa-spin fa-2x"></i>
 		        </li>
 		    </ul>
