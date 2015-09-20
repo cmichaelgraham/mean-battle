@@ -79,15 +79,77 @@ Notes:
 
 ## Angular - Routing (ngRoute)
 
+### Setup directory structure
+
+![image](https://cloud.githubusercontent.com/assets/10272832/9979069/21a02c04-5f13-11e5-8899-b2c4339bc513.png)
+
+### Add script tags to include angular and app `.js` files
+
+```html
+		<!-- Angular includes -->
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+
+		<!-- App includes -->
+		<script src="ng-app/app.module.js"></script>
+		<script src="ng-app/app.routes.js"></script>
+		<script src="ng-app/components/home/homeController.js"></script>
+		<script src="ng-app/components/about/aboutController.js"></script>
+```
+
 ### Add ng-view directive to main html
 
+```html
+	<div ng-view></div>
+```
+
 ### Add Bootstrap menu bar to main html
+
+```html
+  <div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle Navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#">
+		        <i class="fa fa-home"></i>
+		        <span>mean-ng</span>
+		    </a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav">
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#home">home</a>
+		        </li>
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#employee-list">employee list</a>
+		        </li>
+		        <li>
+		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#about">about</a>
+		        </li>
+		    </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+		        <li class="loader" if.bind="router.isNavigating">
+		            <i class="fa fa-spinner fa-spin fa-2x"></i>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+```
 
 ### Get ngRoute
 
 `bower install angular-route --save`
 
 ### Add ngRoute to HTML
+
+```html
+		<script src="bower_components/angular-route/angular-route.js"></script>
+```
 
 ### Configure routing in `app` module
 
