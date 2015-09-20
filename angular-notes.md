@@ -83,6 +83,12 @@ Notes:
 
 ![image](https://cloud.githubusercontent.com/assets/10272832/9979069/21a02c04-5f13-11e5-8899-b2c4339bc513.png)
 
+### Get ngRoute
+
+```bash
+bower install angular-route --save
+```
+
 ### Add script tags to include angular and app `.js` files
 
 ```html
@@ -141,17 +147,32 @@ Notes:
 	</div>
 ```
 
-### Get ngRoute
-
-`bower install angular-route --save`
-
-### Add ngRoute to HTML
-
-```html
-		<script src="bower_components/angular-route/angular-route.js"></script>
-```
-
 ### Configure routing in `app` module
+
+```javascript
+(function(module) {
+	
+	module.config(['$routeProvider', function($routeProvider) {
+		$routeProvider
+			.when('/', {
+				controller: 'HomeCtrl',
+				controllerAs: 'home',
+				templateUrl: 'ng-app/components/home/homeView.html'
+			})
+			.when('/home', {
+				controller: 'HomeCtrl',
+				controllerAs: 'home',
+				templateUrl: 'ng-app/components/home/homeView.html'
+			})
+			.when('/about', {
+				controller: 'AboutCtrl',
+				controllerAs: 'about',
+				templateUrl: 'ng-app/components/about/aboutView.html'
+			}).otherwise('/')
+	}]);
+
+}(angular.module('app')));
+```
 
 ### Highlight selected route
 
