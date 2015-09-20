@@ -63,14 +63,23 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav">
-		        <li>
-		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#home">home</a>
+		        <li ng-class="{ active: nav.isCurrentPath('/home') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#home">home</a>
 		        </li>
-		        <li>
-		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#employee-list">employee list</a>
+		        <li ng-class="{ active: nav.isCurrentPath('/employee-list') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#employee-list">employee list</a>
 		        </li>
-		        <li>
-		            <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href="#about">about</a>
+		        <li ng-class="{ active: nav.isCurrentPath('/about') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#about">about</a>
 		        </li>
 		    </ul>
 
