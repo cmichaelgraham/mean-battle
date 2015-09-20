@@ -294,6 +294,57 @@ Add two second delay when navigating to `about` in `app.routes.js`
 
 ### Highlight selected route
 
+Add method to navController
+
+```javascript
+(function(module) {
+
+	module
+	.controller('NavCtrl', 
+		function(NavService, $location) {
+
+			this.message = 'nav-master';
+
+			this.navSvc = NavService;
+
+			this.isCurrentPath = function(path) {
+				return $location.path() == path;
+			}
+			
+		});
+
+}(angular.module('app')));
+```
+
+Add `ng-class` directive to nav items
+
+```html
+		    <ul class="nav navbar-nav">
+		        <li ng-class="{ active: nav.isCurrentPath('/home') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#home">home</a>
+		        </li>
+		        <li ng-class="{ active: nav.isCurrentPath('/employee-list') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#employee-list">employee list</a>
+		        </li>
+		        <li ng-class="{ active: nav.isCurrentPath('/about') }">
+		            <a 
+		            	data-toggle="collapse" 
+		            	data-target="#bs-example-navbar-collapse-1.in" 
+		            	href="#about">about</a>
+		        </li>
+		    </ul>
+```
+
+...And Voila...
+
+![image](https://cloud.githubusercontent.com/assets/10272832/9980406/79c8df2e-5f55-11e5-9b4d-a03d4b21d160.png)
+
 ## Angular - Routing (ui.router)
 
 ## Angular - OData Service
